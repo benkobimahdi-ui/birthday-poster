@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday/Anniversary Poster Gift - Editable Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #f8e8e8;
+            --card-bg: #ffffff;
+            --accent-color: #2d5a3d;
+            --accent-light: #8fb89f;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --border-color: #d4d4d4;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #fdf4f4 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            max-width: 1400px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .poster-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poster-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .poster-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+
+        .poster-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-light) 100%);
+        }
+
+        .poster-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .poster-header .recipient {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .poster-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .poster-header .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+
+        .date-section {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .date-section .label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            opacity: 0.95;
+        }
+
+        .date-section .date {
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .content-section {
+            background: #fafafa;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .content-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .content-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            text-align: justify;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, #e8f4ea 0%, #d4e7d9 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 1.1rem;
+            border: 3px dashed var(--accent-light);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder:hover {
+            background: linear-gradient(135deg, #d4e7d9 0%, #c0dbc7 100%);
+            border-color: var(--accent-color);
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+
+        .image-placeholder.has-image img {
+            display: block;
+        }
+
+        .image-placeholder.has-image::after {
+            display: none;
+        }
+
+        .image-placeholder::after {
+            content: '📷 Click to Upload Image';
+            font-size: 1.1rem;
+        }
+
+        .photo-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .photo-strip .image-placeholder {
+            height: 180px;
+        }
+
+        .photo-strip .image-placeholder::after {
+            content: '📷';
+            font-size: 2rem;
+        }
+
+        .highlight-section {
+            background: linear-gradient(135deg, rgba(45, 90, 61, 0.05) 0%, rgba(143, 184, 159, 0.05) 100%);
+            padding: 35px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid rgba(45, 90, 61, 0.1);
+        }
+
+        .highlight-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .highlight-section p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .memories-section {
+            margin-bottom: 30px;
+        }
+
+        .memories-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .memory-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--accent-light);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease;
+        }
+
+        .memory-item:hover {
+            transform: translateX(5px);
+        }
+
+        .memory-item p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .closing-message {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            line-height: 2;
+            font-style: italic;
+        }
+
+        .edit-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            max-width: 1400px;
+            width: 100%;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .edit-panel h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .edit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .edit-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .edit-group label {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .edit-group input,
+        .edit-group textarea {
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Crimson Text', serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .edit-group input:focus,
+        .edit-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .edit-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(45, 90, 61, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .instructions {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff4d4 100%);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border-left: 6px solid #f0ad4e;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .instructions h3 {
+            font-family: 'Playfair Display', serif;
+            color: #856404;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .instructions ul {
+            list-style-position: inside;
+            color: #856404;
+            line-height: 2;
+        }
+
+        .instructions li {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .edit-panel,
+            .instructions,
+            .header,
+            .button-group {
+                display: none;
+            }
+            .poster-card {
+                box-shadow: none;
+                page-break-inside: avoid;
+                page-break-after: always;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .photo-strip {
+                grid-template-columns: 1fr;
+            }
+            .header h1 {
+                font-size: 2rem;
+            }
+            .poster-card {
+                padding: 30px;
+            }
+        }
+
+        .editable {
+            position: relative;
+        }
+
+        .editable:hover {
+            background: rgba(45, 90, 61, 0.03);
+            cursor: text;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Birthday/Anniversary Poster Gift</h1>
+        <p>Create a personalized keepsake poster</p>
+    </div>
+
+    <div class="instructions">
+        <h3>📝 How to Use This Template</h3>
+        <ul>
+            <li><strong>Edit Text:</strong> Use the editing panel below to customize all text fields</li>
+            <li><strong>Add Photos:</strong> Click on image placeholders to upload your photos</li>
+            <li><strong>Preview:</strong> Changes appear instantly on the posters above</li>
+            <li><strong>Download:</strong> Use Print to PDF or screenshot the final design</li>
+            <li><strong>Print:</strong> Best printed on A4 or Letter size paper in high quality</li>
+        </ul>
+    </div>
+
+    <div class="edit-panel">
+        <h2>✏️ Customize Your Poster</h2>
+        <div class="edit-grid">
+            <div class="edit-group">
+                <label for="recipient">Recipient Name</label>
+                <input type="text" id="recipient" value="DEAR LUNA" onchange="updateText()">
+            </div>
+            <div class="edit-group">
+                <label for="occasion">Occasion Date</label>
+                <input type="text" id="occasion" value="APRIL 15, 2026" onchange="updateText()">
+            </div>
+            <div class="edit-group">
+                <label for="highlight">Main Message</label>
+                <input type="text" id="highlight" value="YOU MAKE LIFE BEAUTIFUL" onchange="updateText()">
+            </div>
+            <div class="edit-group">
+                <label for="highlight-sub">Sub Message</label>
+                <input type="text" id="highlight-sub" value="YOUR KINDNESS, STRENGTH, AND LOVE BRIGHTEN EVERY MOMENT OF MY LIFE." onchange="updateText()">
+            </div>
+        </div>
+        
+        <div class="edit-grid" style="margin-top: 20px;">
+            <div class="edit-group">
+                <label for="message1">Personal Message (Left Section)</label>
+                <textarea id="message1" onchange="updateText()">You are the light of our family and the person who brings everyone together with love, warmth, and care. Your ability to make things better, whether through your comforting words or just by being there, is truly one of your greatest gifts. On your special day, we want you to know just how much you mean to us. You deserve all the happiness the world has to offer, and we're so grateful for everything you do.</textarea>
+            </div>
+            <div class="edit-group">
+                <label for="message2">Personal Message (Right Section)</label>
+                <textarea id="message2" onchange="updateText()">May your new year be better than the one before it. You have always been an amazing role model for all of us, showing kindness, patience, and enough warmth to carry the whole family in your loving embrace. We cannot express how grateful we are for everything you've done, and we promise to stand by your side just as you've always stood by ours. Here's to another wonderful year filled with beautiful memories.</textarea>
+            </div>
+        </div>
+
+        <div class="edit-grid" style="margin-top: 20px;">
+            <div class="edit-group">
+                <label for="memory1">Special Memory 1</label>
+                <textarea id="memory1" onchange="updateText()">I'm taking my cue nevels. I no longer suppress, but have tried to control it through deep breathing and meditation without recognition, but it seems this people you have on happy and appreciated. Your mere will is an island of your support</textarea>
+            </div>
+            <div class="edit-group">
+                <label for="memory2">Special Memory 2</label>
+                <textarea id="memory2" onchange="updateText()">Remember that time we all laughed until we cried? Those moments with you are priceless. Thank you for being you.</textarea>
+            </div>
+            <div class="edit-group">
+                <label for="memory3">Special Memory 3</label>
+                <textarea id="memory3" onchange="updateText()">Your wisdom and guidance have shaped who I am today. I'm forever grateful for your presence in my life.</textarea>
+            </div>
+        </div>
+
+        <div class="edit-group" style="margin-top: 20px;">
+            <label for="closing">Closing Message</label>
+            <textarea id="closing" onchange="updateText()">May your day be filled with joy, laughter, and endless love. Here's to making every day brighter, happier, and filled with beautiful memories.</textarea>
+        </div>
+
+        <div class="button-group">
+            <button class="btn btn-primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+            <button class="btn btn-secondary" onclick="resetToDefault()">↺ Reset to Default</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Poster 1 -->
+        <div class="poster-card">
+            <div class="poster-header">
+                <div class="recipient editable" id="recipient-display1">DEAR LUNA</div>
+                <h2>HAPPY BIRTHDAY</h2>
+                <div class="tagline">ENDLESS LOVE ALWAYS</div>
+            </div>
+
+            <div class="date-section">
+                <div class="label">CELEBRATING</div>
+                <div class="date editable" id="occasion-display1">APRIL 15, 2026</div>
+            </div>
+
+            <div class="image-placeholder" onclick="uploadImage(this)">
+                <img src="" alt="Main photo">
+            </div>
+
+            <div class="content-grid">
+                <div class="content-section">
+                    <h3>A Message For You</h3>
+                    <p class="editable" id="message1-display1">You are the light of our family and the person who brings everyone together with love, warmth, and care. Your ability to make things better, whether through your comforting words or just by being there, is truly one of your greatest gifts. On your special day, we want you to know just how much you mean to us. You deserve all the happiness the world has to offer, and we're so grateful for everything you do.</p>
+                </div>
+                <div class="content-section">
+                    <h3>Our Wishes</h3>
+                    <p class="editable" id="message2-display1">May your new year be better than the one before it. You have always been an amazing role model for all of us, showing kindness, patience, and enough warmth to carry the whole family in your loving embrace. We cannot express how grateful we are for everything you've done, and we promise to stand by your side just as you've always stood by ours. Here's to another wonderful year filled with beautiful memories.</p>
+                </div>
+            </div>
+
+            <div class="highlight-section">
+                <h3 class="editable" id="highlight-display1">YOU MAKE LIFE BEAUTIFUL</h3>
+                <p class="editable" id="highlight-sub-display1">YOUR KINDNESS, STRENGTH, AND LOVE BRIGHTEN EVERY MOMENT OF MY LIFE.</p>
+            </div>
+
+            <div class="photo-strip">
+                <div class="image-placeholder" onclick="uploadImage(this)">
+                    <img src="" alt="Memory photo 1">
+                </div>
+                <div class="image-placeholder" onclick="uploadImage(this)">
+                    <img src="" alt="Memory photo 2">
+                </div>
+                <div class="image-placeholder" onclick="uploadImage(this)">
+                    <img src="" alt="Memory photo 3">
+                </div>
+            </div>
+
+            <div class="closing-message editable" id="closing-display1">
+                May your day be filled with joy, laughter, and endless love. Here's to making every day brighter, happier, and filled with beautiful memories.
+            </div>
+        </div>
+
+        <!-- Poster 2 - Alternative Layout -->
+        <div class="poster-card">
+            <div class="poster-header">
+                <div class="recipient editable" id="recipient-display2">DEAR LUNA</div>
+                <h2>HAPPY BIRTHDAY</h2>
+                <div class="tagline">ENDLESS LOVE ALWAYS</div>
+            </div>
+
+            <div class="date-section">
+                <div class="label">CELEBRATING</div>
+                <div class="date editable" id="occasion-display2">APRIL 15, 2026</div>
+            </div>
+
+            <div class="highlight-section">
+                <h3 class="editable" id="highlight-display2">YOU MAKE LIFE BEAUTIFUL</h3>
+                <p class="editable" id="highlight-sub-display2">YOUR KINDNESS, STRENGTH, AND LOVE BRIGHTEN EVERY MOMENT OF MY LIFE.</p>
+            </div>
+
+            <div class="image-placeholder" onclick="uploadImage(this)">
+                <img src="" alt="Main celebration photo">
+            </div>
+
+            <div class="memories-section">
+                <h3>Cherished Memories</h3>
+                <div class="memory-item">
+                    <p class="editable" id="memory1-display">I'm taking my cue nevels. I no longer suppress, but have tried to control it through deep breathing and meditation without recognition, but it seems this people you have on happy and appreciated. Your mere will is an island of your support</p>
+                </div>
+                <div class="memory-item">
+                    <p class="editable" id="memory2-display">Remember that time we all laughed until we cried? Those moments with you are priceless. Thank you for being you.</p>
+                </div>
+                <div class="memory-item">
+                    <p class="editable" id="memory3-display">Your wisdom and guidance have shaped who I am today. I'm forever grateful for your presence in my life.</p>
+                </div>
+            </div>
+
+            <div class="photo-strip">
+                <div class="image-placeholder" onclick="uploadImage(this)">
+                    <img src="" alt="Memory photo 4">
+                </div>
+                <div class="image-placeholder" onclick="uploadImage(this)">
+                    <img src="" alt="Memory photo 5">
+                </div>
+                <div class="image-placeholder" onclick="uploadImage(this)">
+                    <img src="" alt="Memory photo 6">
+                </div>
+            </div>
+
+            <div class="closing-message editable" id="closing-display2">
+                May your day be filled with joy, laughter, and endless love. Here's to making every day brighter, happier, and filled with beautiful memories.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateText() {
+            // Get values from input fields
+            const recipient = document.getElementById('recipient').value;
+            const occasion = document.getElementById('occasion').value;
+            const highlight = document.getElementById('highlight').value;
+            const highlightSub = document.getElementById('highlight-sub').value;
+            const message1 = document.getElementById('message1').value;
+            const message2 = document.getElementById('message2').value;
+            const memory1 = document.getElementById('memory1').value;
+            const memory2 = document.getElementById('memory2').value;
+            const memory3 = document.getElementById('memory3').value;
+            const closing = document.getElementById('closing').value;
+
+            // Update all instances
+            document.querySelectorAll('[id^="recipient-display"]').forEach(el => el.textContent = recipient);
+            document.querySelectorAll('[id^="occasion-display"]').forEach(el => el.textContent = occasion);
+            document.querySelectorAll('[id^="highlight-display"]').forEach(el => el.textContent = highlight);
+            document.querySelectorAll('[id^="highlight-sub-display"]').forEach(el => el.textContent = highlightSub);
+            document.querySelectorAll('[id^="message1-display"]').forEach(el => el.textContent = message1);
+            document.querySelectorAll('[id^="message2-display"]').forEach(el => el.textContent = message2);
+            document.querySelectorAll('[id^="memory1-display"]').forEach(el => el.textContent = memory1);
+            document.querySelectorAll('[id^="memory2-display"]').forEach(el => el.textContent = memory2);
+            document.querySelectorAll('[id^="memory3-display"]').forEach(el => el.textContent = memory3);
+            document.querySelectorAll('[id^="closing-display"]').forEach(el => el.textContent = closing);
+        }
+
+        function uploadImage(element) {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (event) => {
+                        const img = element.querySelector('img');
+                        img.src = event.target.result;
+                        element.classList.add('has-image');
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            
+            input.click();
+        }
+
+        function resetToDefault() {
+            if (confirm('Are you sure you want to reset all fields to default values?')) {
+                document.getElementById('recipient').value = 'DEAR LUNA';
+                document.getElementById('occasion').value = 'APRIL 15, 2026';
+                document.getElementById('highlight').value = 'YOU MAKE LIFE BEAUTIFUL';
+                document.getElementById('highlight-sub').value = 'YOUR KINDNESS, STRENGTH, AND LOVE BRIGHTEN EVERY MOMENT OF MY LIFE.';
+                document.getElementById('message1').value = "You are the light of our family and the person who brings everyone together with love, warmth, and care. Your ability to make things better, whether through your comforting words or just by being there, is truly one of your greatest gifts. On your special day, we want you to know just how much you mean to us. You deserve all the happiness the world has to offer, and we're so grateful for everything you do.";
+                document.getElementById('message2').value = "May your new year be better than the one before it. You have always been an amazing role model for all of us, showing kindness, patience, and enough warmth to carry the whole family in your loving embrace. We cannot express how grateful we are for everything you've done, and we promise to stand by your side just as you've always stood by ours. Here's to another wonderful year filled with beautiful memories.";
+                document.getElementById('memory1').value = "I'm taking my cue nevels. I no longer suppress, but have tried to control it through deep breathing and meditation without recognition, but it seems this people you have on happy and appreciated. Your mere will is an island of your support";
+                document.getElementById('memory2').value = "Remember that time we all laughed until we cried? Those moments with you are priceless. Thank you for being you.";
+                document.getElementById('memory3').value = "Your wisdom and guidance have shaped who I am today. I'm forever grateful for your presence in my life.";
+                document.getElementById('closing').value = "May your day be filled with joy, laughter, and endless love. Here's to making every day brighter, happier, and filled with beautiful memories.";
+                
+                updateText();
+                
+                // Reset images
+                document.querySelectorAll('.image-placeholder').forEach(el => {
+                    el.classList.remove('has-image');
+                    el.querySelector('img').src = '';
+                });
+            }
+        }
+
+        // Initialize
+        updateText();
+    </script>
+</body>
+</html>
